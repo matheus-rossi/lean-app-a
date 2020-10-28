@@ -28,12 +28,12 @@ import { ToolbarComponent } from './application/toolbar/toolbar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule.forRoot([]),
     PoModule,
     PoTemplatesModule,
     PoNavbarModule,
     PoMenuModule,
-    PoPageLoginModule,
-    RouterModule.forRoot([])
+    PoPageLoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]
