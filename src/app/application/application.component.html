@@ -1,5 +1,15 @@
 <div class="po-wrapper">
-  <app-menu></app-menu>
-  <app-toolbar></app-toolbar>
+  <po-menu p-filter [p-menus]="menus">
+    <div *p-menu-header-template class="po-p-2 po-font-subtitle text-center" style="text-align: center;">
+      <p>Lean App</p>
+    </div>
+  </po-menu>  
+  <po-toolbar
+  icon="po-icon-company"
+  p-title="matheusrossi.dev.br"
+  >
+  </po-toolbar>
   <router-outlet></router-outlet>
+  
 </div>
+

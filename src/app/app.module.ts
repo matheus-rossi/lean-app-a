@@ -12,8 +12,7 @@ import { PoPageLoginModule } from '@po-ui/ng-templates';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ApplicationComponent } from './application/application.component';
-import { MenuComponent } from './application/menu/menu.component';
-import { ToolbarComponent } from './application/toolbar/toolbar.component';
+import { ProcessComponent } from './application/process/process.component';
 
 
 
@@ -22,8 +21,7 @@ import { ToolbarComponent } from './application/toolbar/toolbar.component';
     AppComponent,
     LoginComponent,
     ApplicationComponent,
-    MenuComponent,
-    ToolbarComponent
+    ProcessComponent
   ],
   imports: [
     BrowserModule,
