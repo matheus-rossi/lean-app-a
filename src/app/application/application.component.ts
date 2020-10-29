@@ -20,7 +20,7 @@ export class ApplicationComponent implements OnInit {
           label: 'Balanceamento Operacional',
           icon: 'po-icon-settings', 
           shortLabel: 'GBO',
-          link: '/app/gbo'
+          link: '/app/process/gbo'
         },
         { 
           label: 'Troca Rápida Ferramenta',

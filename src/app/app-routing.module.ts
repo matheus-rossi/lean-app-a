@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { ApplicationComponent } from './application/application.component';
 import { ProcessComponent } from './application/process/process.component';
+import { GboComponent } from './application/process/gbo/gbo.component';
 
 const routes: Routes = [
   { path: '', 
@@ -18,8 +19,14 @@ const routes: Routes = [
     component: ApplicationComponent,
     children: [
       {
-      path:  'gbo',
-      component:  ProcessComponent
+      path:  'process',
+      component:  ProcessComponent,
+      children: [
+        {
+        path:  'gbo',
+        component:  GboComponent
+        }
+      ]
       }
     ]
   }
