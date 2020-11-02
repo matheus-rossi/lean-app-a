@@ -12,7 +12,10 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ApplicationComponent } from './application/application.component';
 import { ProcessComponent } from './application/process/process.component';
+
 import { GboComponent } from './application/process/gbo/gbo.component';
+import { GboIncludeComponent } from './application/process/gbo/include/include.component';
+import { GboHelpComponent } from './application/process/gbo/help/help.component';
 
 
 
@@ -22,7 +25,9 @@ import { GboComponent } from './application/process/gbo/gbo.component';
     LoginComponent,
     ApplicationComponent,
     ProcessComponent,
-    GboComponent
+    GboComponent,
+    GboIncludeComponent,
+    GboHelpComponent
   ],
   imports: [
     BrowserModule,

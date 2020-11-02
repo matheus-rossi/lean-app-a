@@ -1,0 +1,68 @@
+<po-container>
+  <div class="row">
+    <div class="po-md-12 po-lg-2">
+      <po-number
+        p-label="Takt Time"
+        p-help="Valor em minutos"
+        p-required
+      >
+      </po-number>
+    </div>
+    <div class="po-md-12 po-lg-3">
+      <po-input
+        p-label="Centro de Trabalho"
+        p-help="Nome do Centro de Trabalho"
+        p-required
+      >
+      </po-input>
+    </div>
+    <div class="po-md-12 po-lg-5">
+      <po-input
+        p-label="Descrição da Atividade"
+        p-help="O que está sendo realizado?"
+        p-required
+      >
+      </po-input>
+    </div>
+    <div class="po-md-12 po-lg-2">
+      <po-number
+        p-label="Tempo de Operação"
+        p-help="Valor em minutos"
+        p-required
+      >
+      </po-number>
+    </div>
+    <div class="po-md-12">
+      <po-button
+        p-icon="po-icon-plus"
+        p-label="Adicionar"
+        p-type="string"
+        class="po-mr-1"
+      ></po-button>
+      <po-button
+        p-icon="po-icon-delete"
+        p-label="Limpar"
+        p-type="string" 
+        class="po-mr-1"
+        (p-click)="deleteOperation()"
+      ></po-button>
+      <po-button 
+        p-label="Exportar"
+        p-icon="po-icon-export"
+      >
+      </po-button>
+      <po-divider></po-divider>
+    </div>
+    <div class="po-md-12">
+      <po-table 
+        p-sort="true" 
+        [p-columns]="columns" 
+        [p-items]="items" 
+        [p-striped]="true"
+        p-selectable
+      >
+      </po-table>
+    </div>
+
+  </div>
+</po-container>
