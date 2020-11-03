@@ -4,7 +4,8 @@
       <po-number
         p-label="Takt Time"
         p-help="Valor em minutos"
-        p-required
+        [(ngModel)]="takt"
+        p-name="takt"
       >
       </po-number>
     </div>
@@ -12,7 +13,7 @@
       <po-input
         p-label="Centro de Trabalho"
         p-help="Nome do Centro de Trabalho"
-        p-required
+        [(ngModel)]="work_center"
       >
       </po-input>
     </div>
@@ -20,7 +21,7 @@
       <po-input
         p-label="Descrição da Atividade"
         p-help="O que está sendo realizado?"
-        p-required
+        [(ngModel)]="description"
       >
       </po-input>
     </div>
@@ -28,7 +29,7 @@
       <po-number
         p-label="Tempo de Operação"
         p-help="Valor em minutos"
-        p-required
+        [(ngModel)]="time"
       >
       </po-number>
     </div>
@@ -38,10 +39,11 @@
         p-label="Adicionar"
         p-type="string"
         class="po-mr-1"
+        (p-click)="addOperation()"
       ></po-button>
       <po-button
         p-icon="po-icon-delete"
-        p-label="Limpar"
+        p-label="Remover"
         p-type="string" 
         class="po-mr-1"
         (p-click)="deleteOperation()"

@@ -14,8 +14,7 @@ export class GboComponent implements OnInit {
   }
 
   public readonly actions: Array<PoPageAction> = [
-    { label: 'Ajuda', url:'/app/process/gbo/help', icon: 'po-icon-help' },
-    { label: 'Incluir', url:'/app/process/gbo/include' },
+    { label: 'Ajuda', url:'https://exoconsultoria.com.br/estudo-de-caso-01-gbo/', icon: 'po-icon-help' }
   ];
 
 }

@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
+import { FormsModule }   from '@angular/forms';
+
 import { PoModule } from '@po-ui/ng-components';
 
 import { PoTemplatesModule } from '@po-ui/ng-templates';
@@ -15,7 +17,6 @@ import { ProcessComponent } from './application/process/process.component';
 
 import { GboComponent } from './application/process/gbo/gbo.component';
 import { GboIncludeComponent } from './application/process/gbo/include/include.component';
-import { GboHelpComponent } from './application/process/gbo/help/help.component';
 
 
 
@@ -26,8 +27,7 @@ import { GboHelpComponent } from './application/process/gbo/help/help.component'
     ApplicationComponent,
     ProcessComponent,
     GboComponent,
-    GboIncludeComponent,
-    GboHelpComponent
+    GboIncludeComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +35,8 @@ import { GboHelpComponent } from './application/process/gbo/help/help.component'
     RouterModule.forRoot([]),
     PoModule,
     PoTemplatesModule,
-    PoPageLoginModule
+    PoPageLoginModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

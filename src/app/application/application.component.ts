@@ -17,7 +17,7 @@ export class ApplicationComponent implements OnInit {
       shortLabel: 'Eng. Proc.' ,
       subItems: [
         { 
-          label: 'Balanceamento Operacional',
+          label: 'Balanceamento de Operadores',
           icon: 'po-icon-settings', 
           shortLabel: 'GBO',
           link: '/app/process/gbo'

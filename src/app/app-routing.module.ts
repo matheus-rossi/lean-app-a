@@ -7,7 +7,6 @@ import { ProcessComponent } from './application/process/process.component';
 
 import { GboComponent } from './application/process/gbo/gbo.component';
 import { GboIncludeComponent } from './application/process/gbo/include/include.component';
-import { GboHelpComponent } from './application/process/gbo/help/help.component';
 
 const routes: Routes = [
   { path: '', 
@@ -31,12 +30,13 @@ const routes: Routes = [
         component:  GboComponent,
         children: [
           {
-            path: 'include',
-            component: GboIncludeComponent
+            path: '', 
+            pathMatch: 'full', 
+            redirectTo: 'include' 
           },
           {
-            path: 'help',
-            component: GboHelpComponent
+            path: 'include',
+            component: GboIncludeComponent
           }
         ]
         }
