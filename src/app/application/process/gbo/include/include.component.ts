@@ -1,6 +1,7 @@
 import { 
   Component, 
   OnInit, 
+  AfterViewInit,
   ViewChild 
 } from '@angular/core';
 
@@ -13,12 +14,15 @@ import {
   PoNotificationService
 } from '@po-ui/ng-components';
 
+import * as c3 from 'c3';
+
 @Component({
   selector: 'app-gbo-include',
   templateUrl: './include.component.html',
   styleUrls: ['./include.component.css']
 })
-export class GboIncludeComponent implements OnInit {
+
+export class GboIncludeComponent implements OnInit, AfterViewInit {
 
   takt: number;
   work_center: string;
@@ -26,12 +30,28 @@ export class GboIncludeComponent implements OnInit {
   time: number;
   cycle: number;
 
-  constructor(private poDialog: PoDialogService, private poNotification: PoNotificationService) { }
+  constructor(
+    private poDialog: PoDialogService, 
+    private poNotification: PoNotificationService
+  ) { }
 
   @ViewChild(PoTableComponent, { static: true }) poTable: PoTableComponent;
   @ViewChild(PoModalComponent, { static: true }) poModal: PoModalComponent;
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(): void {
+    let chart = c3.generate({
+      bindto: '#chart',
+          data: {
+              columns: [
+                  ['data1', 30, 200, 100, 400, 150, 250],
+                  ['data2', 50, 20, 10, 40, 15, 25]
+              ]
+          }
+    });
+    console.log(this.items)
   }
 
   readonly columns: Array<PoTableColumn> = [
@@ -69,21 +89,21 @@ export class GboIncludeComponent implements OnInit {
 
   addOperation () {
     let item = {
-      takt: this.takt,
+      takt: (this.takt).toFixed(2),
       work_center: this.work_center,
       description: this.description,
-      time: this.time,
+      time: (this.time).toFixed(2),
       cycle: this.calculateCycleTime(this.time)
     }
 
     if (this.takt && this.work_center && this.description && this.time != null) {
       this.items.push(item);
 
-      this.takt = null;
-      this.work_center = null;
-      this.description = null;
-      this.time = null;
-      this.cycle = null;
+      this.takt = undefined;
+      this.work_center = undefined;
+      this.description = undefined;
+      this.time = undefined;
+      this.cycle = undefined;
 
     } else {
       const poNotification: PoNotification = {
