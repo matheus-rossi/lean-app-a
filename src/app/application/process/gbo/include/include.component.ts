@@ -8,7 +8,9 @@ import {
   PoTableComponent, 
   PoModalComponent, 
   PoDialogService,
-  PoTableColumn
+  PoTableColumn,
+  PoNotification,
+  PoNotificationService
 } from '@po-ui/ng-components';
 
 @Component({
@@ -24,7 +26,7 @@ export class GboIncludeComponent implements OnInit {
   time: number;
   cycle: number;
 
-  constructor(private poDialog: PoDialogService) { }
+  constructor(private poDialog: PoDialogService, private poNotification: PoNotificationService) { }
 
   @ViewChild(PoTableComponent, { static: true }) poTable: PoTableComponent;
   @ViewChild(PoModalComponent, { static: true }) poModal: PoModalComponent;
@@ -71,7 +73,7 @@ export class GboIncludeComponent implements OnInit {
       work_center: this.work_center,
       description: this.description,
       time: this.time,
-      cycle: this.calcCycle(this.time)
+      cycle: this.calculateCycleTime(this.time)
     }
 
     if (this.takt && this.work_center && this.description && this.time != null) {
@@ -84,13 +86,18 @@ export class GboIncludeComponent implements OnInit {
       this.cycle = null;
 
     } else {
-      alert('Campos Vazios')
+      const poNotification: PoNotification = {
+        message: 'Campos inválidos, favor verificar as informações',
+        duration: 3000
+      };
+
+      this.poNotification.warning(poNotification);
     }
 
 
   }
 
-  calcCycle (takt: number) {
+  calculateCycleTime (takt: number) {
     return (takt * 0.8).toFixed(2);
   }
 
