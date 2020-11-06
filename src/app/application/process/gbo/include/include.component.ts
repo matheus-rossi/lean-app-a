@@ -15,6 +15,7 @@ import {
 } from '@po-ui/ng-components';
 
 import * as c3 from 'c3';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-gbo-include',
@@ -25,10 +26,11 @@ import * as c3 from 'c3';
 export class GboIncludeComponent implements OnInit, AfterViewInit {
 
   takt: number;
-  work_center: string;
+  workCenter: string;
   description: string;
   time: number;
-  cycle: number;
+  lowRepCycle: number;
+  chartData: any;
 
   constructor(
     private poDialog: PoDialogService, 
@@ -42,68 +44,56 @@ export class GboIncludeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    let chart = c3.generate({
-      bindto: '#chart',
-          data: {
-              columns: [
-                  ['data1', 30, 200, 100, 400, 150, 250],
-                  ['data2', 50, 20, 10, 40, 15, 25]
-              ]
-          }
-    });
-    console.log(this.items)
+    this.generateChart();
   }
 
   readonly columns: Array<PoTableColumn> = [
     { property: 'takt', type: 'number', label: 'Takt' },
     { property: 'cycle', type: 'number', label: 'Ciclo' },
-    { property: 'work_center', label: 'Centro Trabalho' },
+    { property: 'workCenter', label: 'Centro Trabalho' },
     { property: 'description', label: 'Descrição Atividade' },
-    { property: 'time', label: 'Tempo' }
+    { property: 'lowRepCycle', label: 'Tempo' }
   ]
 
   
   items: Array<any> = [
-    {
-      takt: 50,
-      work_center: 'Pré-Montagem',
-      description: 'Operação 1',
-      time: 32,
-      cycle: 28
+    { 
+      takt: 50, 
+      workCenter: 'Pré-Montagem', 
+      description: 'Operação 1', 
+      cycle: 40,
+      lowRepCycle: 28 
     },
-    {
+    { 
+      takt: 50, 
+      cycle: 40,
+      workCenter: 'Pré-Montagem', 
+      description: 'Operação 2', 
+      lowRepCycle: 28 },
+    { 
       takt: 50,
-      work_center: 'Pré-Montagem',
-      description: 'Operação 2',
-      time: 32,
-      cycle: 28
-    },
-    {
-      takt: 50,
-      work_center: 'Montagem',
-      description: 'Operação Final',
-      time: 40,
-      cycle: 36
-    }
+      cycle: 40, 
+      workCenter: 'Montagem', 
+      description: 'Operação Final', 
+      lowRepCycle: 36 }
   ]
 
   addOperation () {
     let item = {
-      takt: (this.takt).toFixed(2),
-      work_center: this.work_center,
+      takt: this.takt,
+      cycle: this.calculateCycleTime(this.takt),
+      workCenter: this.workCenter,
       description: this.description,
-      time: (this.time).toFixed(2),
-      cycle: this.calculateCycleTime(this.time)
+      lowRepCycle: this.lowRepCycle
     }
 
-    if (this.takt && this.work_center && this.description && this.time != null) {
+    if (this.takt && this.workCenter && this.description && this.lowRepCycle != null) {
       this.items.push(item);
 
       this.takt = undefined;
-      this.work_center = undefined;
+      this.workCenter = undefined;
       this.description = undefined;
-      this.time = undefined;
-      this.cycle = undefined;
+      this.lowRepCycle = undefined;
 
     } else {
       const poNotification: PoNotification = {
@@ -114,6 +104,7 @@ export class GboIncludeComponent implements OnInit, AfterViewInit {
       this.poNotification.warning(poNotification);
     }
 
+    this.generateChart();
 
   }
 
@@ -133,6 +124,100 @@ export class GboIncludeComponent implements OnInit, AfterViewInit {
         cancel: () => {}
       });
     }
+  }
+
+  generateChartData (data) {
+    this.chartData = this.obcCalc(data)
+  }
+
+  generateChart () {
+    this.chart();
+    this.generateChartData(this.items);
+  }
+
+  obcCalc (obc:Array<any>) {
+    const firstCol = [
+      ['x']
+    ]
+    const secondCol = [
+      ['# Processo']
+    ]
+    const thirdCol = [
+      ['Takt']
+    ]
+    const fourthCol = [
+      ['Ciclo']
+    ]
+    const workCenterUniqArray = _.uniq(obc.map(proc => proc.workCenter))
+    const finalFirstCol = _.flattenDeep(firstCol.concat(workCenterUniqArray))
+    const groups = []
+    for (let i = 0; i < workCenterUniqArray.length; i++) {
+      const processByBox = obc
+        .filter(proc => proc.workCenter === workCenterUniqArray[i])
+        .map(proc => proc.lowRepCycle)
+        .reduce((acc, curr) => acc + curr)
+      groups.push(processByBox)
+    }
+    const finalSecondCol = _.flattenDeep(secondCol.concat(groups))
+    const almostFinalThirdCol = []
+    const almostFinalFourthCol = []
+    for (let i = 0; i < workCenterUniqArray.length; i++) {
+      const processByBox = obc
+        .filter(proc => proc.workCenter === workCenterUniqArray[i])
+        .map(proc => proc.takt)
+      almostFinalThirdCol.push(_.uniq(processByBox))
+    }
+    const finalThirdCol = thirdCol.concat(_.flattenDeep(almostFinalThirdCol))
+    for (let i = 0; i < workCenterUniqArray.length; i++) {
+      const processByBox = obc
+        .filter(proc => proc.workCenter === workCenterUniqArray[i])
+        .map(proc => proc.cycle)
+      almostFinalFourthCol.push(_.uniq(processByBox))
+    }
+    const finalFourthCol = fourthCol.concat(_.flattenDeep(almostFinalFourthCol))
+    return {
+      finalFirstCol,
+      finalSecondCol,
+      finalThirdCol,
+      finalFourthCol
+    }
+  }
+
+  chart () {
+    setTimeout(() => {
+      c3.generate({
+        bindto: '#chart',
+        data: {
+          x: 'x',
+          columns: [
+            this.chartData.finalFirstCol,
+            this.chartData.finalSecondCol,
+            this.chartData.finalThirdCol,
+            this.chartData.finalFourthCol,
+          ],
+          type: 'bar',
+          types: {
+            Takt: 'line',
+            Ciclo: 'line'
+          },
+          axes: {
+            takt: 'y2'
+          }
+        },
+        legend: {
+          position: 'inset'
+        },
+        axis: {
+          x: {
+            type: 'category',
+            tick: {
+              rotate: 75,
+              multiline: false
+            }
+          }
+        }
+      })
+    }, 50)
   }
 
 }
