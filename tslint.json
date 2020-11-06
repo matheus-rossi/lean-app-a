@@ -1,5 +1,8 @@
 {
-  "extends": "tslint:recommended",
+  "extends": [
+    "tslint:recommended",
+    "@po-ui/ng-tslint"
+  ],
   "rules": {
     "align": {
       "options": [

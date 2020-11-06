@@ -9,16 +9,16 @@ import { GboComponent } from './application/process/gbo/gbo.component';
 import { GboIncludeComponent } from './application/process/gbo/include/include.component';
 
 const routes: Routes = [
-  { path: '', 
-    pathMatch: 'full', 
-    redirectTo: 'login' 
+  { path: '',
+    pathMatch: 'full',
+    redirectTo: 'login'
   },
-  { 
-    path: 'login', 
-    component: LoginComponent 
+  {
+    path: 'login',
+    component: LoginComponent
   },
-  { 
-    path: 'app', 
+  {
+    path: 'app',
     component: ApplicationComponent,
     children: [
       {
@@ -30,9 +30,9 @@ const routes: Routes = [
         component:  GboComponent,
         children: [
           {
-            path: '', 
-            pathMatch: 'full', 
-            redirectTo: 'include' 
+            path: '',
+            pathMatch: 'full',
+            redirectTo: 'include'
           },
           {
             path: 'include',

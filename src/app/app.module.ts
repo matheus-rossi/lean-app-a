@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { PoModule } from '@po-ui/ng-components';
 
@@ -17,8 +17,6 @@ import { ProcessComponent } from './application/process/process.component';
 
 import { GboComponent } from './application/process/gbo/gbo.component';
 import { GboIncludeComponent } from './application/process/gbo/include/include.component';
-
-
 
 @NgModule({
   declarations: [

@@ -75,7 +75,8 @@ export class GboIncludeComponent implements OnInit, AfterViewInit {
       cycle: 40, 
       workCenter: 'Montagem', 
       description: 'Operação Final', 
-      lowRepCycle: 36 }
+      lowRepCycle: 36 
+    }
   ]
 
   addOperation () {
