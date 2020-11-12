@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { ApplicationComponent } from './application/application.component';
@@ -7,6 +7,10 @@ import { ProcessComponent } from './application/process/process.component';
 
 import { GboComponent } from './application/process/gbo/gbo.component';
 import { GboIncludeComponent } from './application/process/gbo/include/include.component';
+
+import { PpcpmComponent } from './application/ppcpm/ppcpm.component';
+import { ProjectComponent } from './application/ppcpm/project/project.component';
+import { ViewerComponent } from './application/ppcpm/project/viewer/viewer.component';
 
 const routes: Routes = [
   { path: '',
@@ -41,7 +45,28 @@ const routes: Routes = [
         ]
         }
       ]
-      }
+    },
+    {
+      path: 'ppcpm',
+      component: PpcpmComponent,
+      children: [        
+        {
+          path: 'project',
+          component: ProjectComponent,
+          children: [
+            {
+              path: '',
+              pathMatch: 'full',
+              redirectTo: 'viewer'
+            },  
+            {
+              path: 'viewer',
+              component: ViewerComponent
+            }
+          ]
+        }
+      ]
+    }
     ]
   }
 ];

@@ -18,23 +18,19 @@ export class ApplicationComponent implements OnInit {
       subItems: [
         {
           label: 'Balanceamento de Operadores',
-          icon: 'po-icon-settings',
           shortLabel: 'GBO',
           link: '/app/process/gbo'
         },
         {
           label: 'Troca Rápida Ferramenta',
-          icon: 'po-icon-settings',
           shortLabel: 'TRF'
         },
         {
           label: 'Gestão do Posto de Trabalho',
-          icon: 'po-icon-settings',
           shortLabel: 'GPT'
         },
         {
           label: 'Eficiência',
-          icon: 'po-icon-settings',
           shortLabel: 'OEE'
         }
       ]
@@ -44,7 +40,8 @@ export class ApplicationComponent implements OnInit {
       shortLabel: 'PPCPM',
       subItems: [
         {
-          label: 'Produção'
+          label: 'Projetos',
+          link: '/app/ppcpm/project'
         }
       ]
     },

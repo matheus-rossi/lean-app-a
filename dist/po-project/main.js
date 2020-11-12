@@ -40,6 +40,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _application_process_process_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./application/process/process.component */ "./src/app/application/process/process.component.ts");
 /* harmony import */ var _application_process_gbo_gbo_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./application/process/gbo/gbo.component */ "./src/app/application/process/gbo/gbo.component.ts");
 /* harmony import */ var _application_process_gbo_include_include_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./application/process/gbo/include/include.component */ "./src/app/application/process/gbo/include/include.component.ts");
+/* harmony import */ var _application_ppcpm_ppcpm_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./application/ppcpm/ppcpm.component */ "./src/app/application/ppcpm/ppcpm.component.ts");
+/* harmony import */ var _application_ppcpm_project_project_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./application/ppcpm/project/project.component */ "./src/app/application/ppcpm/project/project.component.ts");
+/* harmony import */ var _application_ppcpm_project_viewer_viewer_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./application/ppcpm/project/viewer/viewer.component */ "./src/app/application/ppcpm/project/viewer/viewer.component.ts");
+
+
+
 
 
 
@@ -78,6 +84,27 @@ const routes = [
                             {
                                 path: 'include',
                                 component: _application_process_gbo_include_include_component__WEBPACK_IMPORTED_MODULE_6__["GboIncludeComponent"]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                path: 'ppcpm',
+                component: _application_ppcpm_ppcpm_component__WEBPACK_IMPORTED_MODULE_7__["PpcpmComponent"],
+                children: [
+                    {
+                        path: 'project',
+                        component: _application_ppcpm_project_project_component__WEBPACK_IMPORTED_MODULE_8__["ProjectComponent"],
+                        children: [
+                            {
+                                path: '',
+                                pathMatch: 'full',
+                                redirectTo: 'viewer'
+                            },
+                            {
+                                path: 'viewer',
+                                component: _application_ppcpm_project_viewer_viewer_component__WEBPACK_IMPORTED_MODULE_9__["ViewerComponent"]
                             }
                         ]
                     }
@@ -152,12 +179,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
 /* harmony import */ var _po_ui_ng_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @po-ui/ng-components */ "./node_modules/@po-ui/ng-components/__ivy_ngcc__/fesm2015/po-ui-ng-components.js");
 /* harmony import */ var _po_ui_ng_templates__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @po-ui/ng-templates */ "./node_modules/@po-ui/ng-templates/__ivy_ngcc__/fesm2015/po-ui-ng-templates.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
-/* harmony import */ var _application_application_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./application/application.component */ "./src/app/application/application.component.ts");
-/* harmony import */ var _application_process_process_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./application/process/process.component */ "./src/app/application/process/process.component.ts");
-/* harmony import */ var _application_process_gbo_gbo_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./application/process/gbo/gbo.component */ "./src/app/application/process/gbo/gbo.component.ts");
-/* harmony import */ var _application_process_gbo_include_include_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./application/process/gbo/include/include.component */ "./src/app/application/process/gbo/include/include.component.ts");
+/* harmony import */ var ng2_pdf_viewer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ng2-pdf-viewer */ "./node_modules/ng2-pdf-viewer/__ivy_ngcc__/fesm2015/ng2-pdf-viewer.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _application_application_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./application/application.component */ "./src/app/application/application.component.ts");
+/* harmony import */ var _application_process_process_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./application/process/process.component */ "./src/app/application/process/process.component.ts");
+/* harmony import */ var _application_process_gbo_gbo_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./application/process/gbo/gbo.component */ "./src/app/application/process/gbo/gbo.component.ts");
+/* harmony import */ var _application_process_gbo_include_include_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./application/process/gbo/include/include.component */ "./src/app/application/process/gbo/include/include.component.ts");
+/* harmony import */ var _application_ppcpm_ppcpm_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./application/ppcpm/ppcpm.component */ "./src/app/application/ppcpm/ppcpm.component.ts");
+/* harmony import */ var _application_ppcpm_project_project_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./application/ppcpm/project/project.component */ "./src/app/application/ppcpm/project/project.component.ts");
+/* harmony import */ var _application_ppcpm_project_viewer_viewer_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./application/ppcpm/project/viewer/viewer.component */ "./src/app/application/ppcpm/project/viewer/viewer.component.ts");
+
+
+
+
 
 
 
@@ -176,7 +211,7 @@ __webpack_require__.r(__webpack_exports__);
 
 class AppModule {
 }
-AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]] });
+AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]] });
 AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function AppModule_Factory(t) { return new (t || AppModule)(); }, providers: [], imports: [[
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
@@ -184,28 +219,36 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
             _po_ui_ng_components__WEBPACK_IMPORTED_MODULE_5__["PoModule"],
             _po_ui_ng_templates__WEBPACK_IMPORTED_MODULE_6__["PoTemplatesModule"],
             _po_ui_ng_templates__WEBPACK_IMPORTED_MODULE_6__["PoPageLoginModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"]
+            _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
+            ng2_pdf_viewer__WEBPACK_IMPORTED_MODULE_7__["PdfViewerModule"]
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
-        _login_login_component__WEBPACK_IMPORTED_MODULE_8__["LoginComponent"],
-        _application_application_component__WEBPACK_IMPORTED_MODULE_9__["ApplicationComponent"],
-        _application_process_process_component__WEBPACK_IMPORTED_MODULE_10__["ProcessComponent"],
-        _application_process_gbo_gbo_component__WEBPACK_IMPORTED_MODULE_11__["GboComponent"],
-        _application_process_gbo_include_include_component__WEBPACK_IMPORTED_MODULE_12__["GboIncludeComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"],
+        _login_login_component__WEBPACK_IMPORTED_MODULE_9__["LoginComponent"],
+        _application_application_component__WEBPACK_IMPORTED_MODULE_10__["ApplicationComponent"],
+        _application_process_process_component__WEBPACK_IMPORTED_MODULE_11__["ProcessComponent"],
+        _application_process_gbo_gbo_component__WEBPACK_IMPORTED_MODULE_12__["GboComponent"],
+        _application_process_gbo_include_include_component__WEBPACK_IMPORTED_MODULE_13__["GboIncludeComponent"],
+        _application_ppcpm_ppcpm_component__WEBPACK_IMPORTED_MODULE_14__["PpcpmComponent"],
+        _application_ppcpm_project_project_component__WEBPACK_IMPORTED_MODULE_15__["ProjectComponent"],
+        _application_ppcpm_project_viewer_viewer_component__WEBPACK_IMPORTED_MODULE_16__["ViewerComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
         _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"], _po_ui_ng_components__WEBPACK_IMPORTED_MODULE_5__["PoModule"],
         _po_ui_ng_templates__WEBPACK_IMPORTED_MODULE_6__["PoTemplatesModule"],
         _po_ui_ng_templates__WEBPACK_IMPORTED_MODULE_6__["PoPageLoginModule"],
-        _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"]] }); })();
+        _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
+        ng2_pdf_viewer__WEBPACK_IMPORTED_MODULE_7__["PdfViewerModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
                 declarations: [
-                    _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
-                    _login_login_component__WEBPACK_IMPORTED_MODULE_8__["LoginComponent"],
-                    _application_application_component__WEBPACK_IMPORTED_MODULE_9__["ApplicationComponent"],
-                    _application_process_process_component__WEBPACK_IMPORTED_MODULE_10__["ProcessComponent"],
-                    _application_process_gbo_gbo_component__WEBPACK_IMPORTED_MODULE_11__["GboComponent"],
-                    _application_process_gbo_include_include_component__WEBPACK_IMPORTED_MODULE_12__["GboIncludeComponent"]
+                    _app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"],
+                    _login_login_component__WEBPACK_IMPORTED_MODULE_9__["LoginComponent"],
+                    _application_application_component__WEBPACK_IMPORTED_MODULE_10__["ApplicationComponent"],
+                    _application_process_process_component__WEBPACK_IMPORTED_MODULE_11__["ProcessComponent"],
+                    _application_process_gbo_gbo_component__WEBPACK_IMPORTED_MODULE_12__["GboComponent"],
+                    _application_process_gbo_include_include_component__WEBPACK_IMPORTED_MODULE_13__["GboIncludeComponent"],
+                    _application_ppcpm_ppcpm_component__WEBPACK_IMPORTED_MODULE_14__["PpcpmComponent"],
+                    _application_ppcpm_project_project_component__WEBPACK_IMPORTED_MODULE_15__["ProjectComponent"],
+                    _application_ppcpm_project_viewer_viewer_component__WEBPACK_IMPORTED_MODULE_16__["ViewerComponent"]
                 ],
                 imports: [
                     _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -214,10 +257,11 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _po_ui_ng_components__WEBPACK_IMPORTED_MODULE_5__["PoModule"],
                     _po_ui_ng_templates__WEBPACK_IMPORTED_MODULE_6__["PoTemplatesModule"],
                     _po_ui_ng_templates__WEBPACK_IMPORTED_MODULE_6__["PoPageLoginModule"],
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"]
+                    _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
+                    ng2_pdf_viewer__WEBPACK_IMPORTED_MODULE_7__["PdfViewerModule"]
                 ],
                 providers: [],
-                bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
+                bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
             }]
     }], null, null); })();
 
@@ -257,23 +301,19 @@ class ApplicationComponent {
                 subItems: [
                     {
                         label: 'Balanceamento de Operadores',
-                        icon: 'po-icon-settings',
                         shortLabel: 'GBO',
                         link: '/app/process/gbo'
                     },
                     {
                         label: 'Troca Rápida Ferramenta',
-                        icon: 'po-icon-settings',
                         shortLabel: 'TRF'
                     },
                     {
                         label: 'Gestão do Posto de Trabalho',
-                        icon: 'po-icon-settings',
                         shortLabel: 'GPT'
                     },
                     {
                         label: 'Eficiência',
-                        icon: 'po-icon-settings',
                         shortLabel: 'OEE'
                     }
                 ]
@@ -283,7 +323,8 @@ class ApplicationComponent {
                 shortLabel: 'PPCPM',
                 subItems: [
                     {
-                        label: 'Produção'
+                        label: 'Projetos',
+                        link: '/app/ppcpm/project'
                     }
                 ]
             },
@@ -334,6 +375,139 @@ ApplicationComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
                 selector: 'app-application',
                 templateUrl: './application.component.html',
                 styleUrls: ['./application.component.css']
+            }]
+    }], function () { return []; }, null); })();
+
+
+/***/ }),
+
+/***/ "./src/app/application/ppcpm/ppcpm.component.ts":
+/*!******************************************************!*\
+  !*** ./src/app/application/ppcpm/ppcpm.component.ts ***!
+  \******************************************************/
+/*! exports provided: PpcpmComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PpcpmComponent", function() { return PpcpmComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+
+
+
+class PpcpmComponent {
+    constructor() {
+        this.actions = [
+            { label: 'Ajuda', url: 'https://exoconsultoria.com.br/estudo-de-caso-01-gbo/', icon: 'po-icon-help' }
+        ];
+    }
+    ngOnInit() {
+    }
+}
+PpcpmComponent.ɵfac = function PpcpmComponent_Factory(t) { return new (t || PpcpmComponent)(); };
+PpcpmComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: PpcpmComponent, selectors: [["app-ppcpm"]], decls: 1, vars: 0, template: function PpcpmComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "router-outlet");
+    } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterOutlet"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcGxpY2F0aW9uL3BwY3BtL3BwY3BtLmNvbXBvbmVudC5jc3MifQ== */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](PpcpmComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-ppcpm',
+                templateUrl: './ppcpm.component.html',
+                styleUrls: ['./ppcpm.component.css']
+            }]
+    }], function () { return []; }, null); })();
+
+
+/***/ }),
+
+/***/ "./src/app/application/ppcpm/project/project.component.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/application/ppcpm/project/project.component.ts ***!
+  \****************************************************************/
+/*! exports provided: ProjectComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProjectComponent", function() { return ProjectComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _po_ui_ng_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @po-ui/ng-components */ "./node_modules/@po-ui/ng-components/__ivy_ngcc__/fesm2015/po-ui-ng-components.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+
+
+
+
+class ProjectComponent {
+    constructor() {
+        this.actions = [
+            { label: 'Ajuda', url: 'https://exoconsultoria.com.br/estudo-de-caso-01-gbo/', icon: 'po-icon-help' }
+        ];
+    }
+    ngOnInit() {
+    }
+}
+ProjectComponent.ɵfac = function ProjectComponent_Factory(t) { return new (t || ProjectComponent)(); };
+ProjectComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ProjectComponent, selectors: [["app-project"]], decls: 2, vars: 1, consts: [["p-title", "Projetos", 3, "p-actions"]], template: function ProjectComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "po-page-default", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "router-outlet");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("p-actions", ctx.actions);
+    } }, directives: [_po_ui_ng_components__WEBPACK_IMPORTED_MODULE_1__["PoPageDefaultComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterOutlet"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcGxpY2F0aW9uL3BwY3BtL3Byb2plY3QvcHJvamVjdC5jb21wb25lbnQuY3NzIn0= */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ProjectComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-project',
+                templateUrl: './project.component.html',
+                styleUrls: ['./project.component.css']
+            }]
+    }], function () { return []; }, null); })();
+
+
+/***/ }),
+
+/***/ "./src/app/application/ppcpm/project/viewer/viewer.component.ts":
+/*!**********************************************************************!*\
+  !*** ./src/app/application/ppcpm/project/viewer/viewer.component.ts ***!
+  \**********************************************************************/
+/*! exports provided: ViewerComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViewerComponent", function() { return ViewerComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _po_ui_ng_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @po-ui/ng-components */ "./node_modules/@po-ui/ng-components/__ivy_ngcc__/fesm2015/po-ui-ng-components.js");
+/* harmony import */ var ng2_pdf_viewer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ng2-pdf-viewer */ "./node_modules/ng2-pdf-viewer/__ivy_ngcc__/fesm2015/ng2-pdf-viewer.js");
+
+
+
+
+class ViewerComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+ViewerComponent.ɵfac = function ViewerComponent_Factory(t) { return new (t || ViewerComponent)(); };
+ViewerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ViewerComponent, selectors: [["app-viewer"]], decls: 4, vars: 2, consts: [[1, "row"], [1, "po-md-12", "po-lg-12"], ["src", "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf", 3, "original-size", "fit-to-page"]], template: function ViewerComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "po-container");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "pdf-viewer", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("original-size", true)("fit-to-page", true);
+    } }, directives: [_po_ui_ng_components__WEBPACK_IMPORTED_MODULE_1__["PoContainerComponent"], ng2_pdf_viewer__WEBPACK_IMPORTED_MODULE_2__["PdfViewerComponent"]], styles: [".pdf-viewer[_ngcontent-%COMP%] {\n    display: block;\n    height: 100vh;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwbGljYXRpb24vcHBjcG0vcHJvamVjdC92aWV3ZXIvdmlld2VyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxjQUFjO0lBQ2QsYUFBYTtBQUNqQiIsImZpbGUiOiJzcmMvYXBwL2FwcGxpY2F0aW9uL3BwY3BtL3Byb2plY3Qvdmlld2VyL3ZpZXdlci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnBkZi12aWV3ZXIge1xuICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgIGhlaWdodDogMTAwdmg7XG59Il19 */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ViewerComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-viewer',
+                templateUrl: './viewer.component.html',
+                styleUrls: ['./viewer.component.css']
             }]
     }], function () { return []; }, null); })();
 
@@ -451,7 +625,7 @@ class GboIncludeComponent {
         this.generateChart();
     }
     addOperation() {
-        let item = {
+        const item = {
             takt: this.takt,
             cycle: this.calculateCycleTime(this.takt),
             workCenter: this.workCenter,
@@ -512,9 +686,9 @@ class GboIncludeComponent {
         const workCenterUniqArray = lodash__WEBPACK_IMPORTED_MODULE_3__["uniq"](obc.map(proc => proc.workCenter));
         const finalFirstCol = lodash__WEBPACK_IMPORTED_MODULE_3__["flattenDeep"](firstCol.concat(workCenterUniqArray));
         const groups = [];
-        for (let i = 0; i < workCenterUniqArray.length; i++) {
+        for (const row of workCenterUniqArray) {
             const processByBox = obc
-                .filter(proc => proc.workCenter === workCenterUniqArray[i])
+                .filter(proc => proc.workCenter === row)
                 .map(proc => proc.lowRepCycle)
                 .reduce((acc, curr) => acc + curr);
             groups.push(processByBox);
@@ -522,16 +696,16 @@ class GboIncludeComponent {
         const finalSecondCol = lodash__WEBPACK_IMPORTED_MODULE_3__["flattenDeep"](secondCol.concat(groups));
         const almostFinalThirdCol = [];
         const almostFinalFourthCol = [];
-        for (let i = 0; i < workCenterUniqArray.length; i++) {
+        for (const row of workCenterUniqArray) {
             const processByBox = obc
-                .filter(proc => proc.workCenter === workCenterUniqArray[i])
+                .filter(proc => proc.workCenter === row)
                 .map(proc => proc.takt);
             almostFinalThirdCol.push(lodash__WEBPACK_IMPORTED_MODULE_3__["uniq"](processByBox));
         }
         const finalThirdCol = thirdCol.concat(lodash__WEBPACK_IMPORTED_MODULE_3__["flattenDeep"](almostFinalThirdCol));
-        for (let i = 0; i < workCenterUniqArray.length; i++) {
+        for (const row of workCenterUniqArray) {
             const processByBox = obc
-                .filter(proc => proc.workCenter === workCenterUniqArray[i])
+                .filter(proc => proc.workCenter === row)
                 .map(proc => proc.cycle);
             almostFinalFourthCol.push(lodash__WEBPACK_IMPORTED_MODULE_3__["uniq"](processByBox));
         }
@@ -801,8 +975,63 @@ _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["platformBrowser"]().boot
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\matheus.rossi\Documents\Angular\lean-app-a\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/matheus-rossi/po-project/src/main.ts */"./src/main.ts");
 
+
+/***/ }),
+
+/***/ 1:
+/*!**********************!*\
+  !*** zlib (ignored) ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 2:
+/*!********************!*\
+  !*** fs (ignored) ***!
+  \********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 3:
+/*!**********************!*\
+  !*** http (ignored) ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 4:
+/*!***********************!*\
+  !*** https (ignored) ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 5:
+/*!*********************!*\
+  !*** url (ignored) ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
 
 /***/ })
 

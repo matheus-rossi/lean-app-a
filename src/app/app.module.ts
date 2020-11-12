@@ -14,10 +14,14 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ApplicationComponent } from './application/application.component';
-import { ProcessComponent } from './application/process/process.component';
 
+import { ProcessComponent } from './application/process/process.component';
 import { GboComponent } from './application/process/gbo/gbo.component';
 import { GboIncludeComponent } from './application/process/gbo/include/include.component';
+
+import { PpcpmComponent } from './application/ppcpm/ppcpm.component';
+import { ProjectComponent } from './application/ppcpm/project/project.component';
+import { ViewerComponent } from './application/ppcpm/project/viewer/viewer.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,10 @@ import { GboIncludeComponent } from './application/process/gbo/include/include.c
     ApplicationComponent,
     ProcessComponent,
     GboComponent,
-    GboIncludeComponent
+    GboIncludeComponent,
+    PpcpmComponent,
+    ProjectComponent,
+    ViewerComponent
   ],
   imports: [
     BrowserModule,
