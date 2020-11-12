@@ -6,9 +6,10 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { PoModule } from '@po-ui/ng-components';
-
 import { PoTemplatesModule } from '@po-ui/ng-templates';
 import { PoPageLoginModule } from '@po-ui/ng-templates';
+
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -34,7 +35,8 @@ import { GboIncludeComponent } from './application/process/gbo/include/include.c
     PoModule,
     PoTemplatesModule,
     PoPageLoginModule,
-    FormsModule
+    FormsModule,
+    PdfViewerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
