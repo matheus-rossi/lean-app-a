@@ -8,13 +8,14 @@ import { PoPageAction } from '@po-ui/ng-components';
 })
 export class GboComponent implements OnInit {
 
+  public readonly actions: Array<PoPageAction> = [
+    { label: 'Ajuda', url: 'https://exoconsultoria.com.br/estudo-de-caso-01-gbo/', icon: 'po-icon-help' }
+  ];
+
   constructor() { }
 
   ngOnInit(): void {
-  }
 
-  public readonly actions: Array<PoPageAction> = [
-    { label: 'Ajuda', url:'https://exoconsultoria.com.br/estudo-de-caso-01-gbo/', icon: 'po-icon-help' }
-  ];
+  }
 
 }

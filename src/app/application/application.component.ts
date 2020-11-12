@@ -12,38 +12,38 @@ export class ApplicationComponent implements OnInit {
   menuItemSelected: string;
 
   menus: Array<PoMenuItem> = [
-    { label: 'Eng de Processos', 
-      icon: 'po-icon-settings', 
-      shortLabel: 'Eng. Proc.' ,
+    { label: 'Eng de Processos',
+      icon: 'po-icon-settings',
+      shortLabel: 'Eng. Proc.',
       subItems: [
-        { 
+        {
           label: 'Balanceamento de Operadores',
-          icon: 'po-icon-settings', 
+          icon: 'po-icon-settings',
           shortLabel: 'GBO',
           link: '/app/process/gbo'
         },
-        { 
+        {
           label: 'Troca Rápida Ferramenta',
-          icon: 'po-icon-settings', 
-          shortLabel: 'TRF' 
+          icon: 'po-icon-settings',
+          shortLabel: 'TRF'
         },
-        { 
+        {
           label: 'Gestão do Posto de Trabalho',
-          icon: 'po-icon-settings', 
-          shortLabel: 'GPT' 
+          icon: 'po-icon-settings',
+          shortLabel: 'GPT'
         },
-        { 
+        {
           label: 'Eficiência',
-          icon: 'po-icon-settings', 
-          shortLabel: 'OEE' 
+          icon: 'po-icon-settings',
+          shortLabel: 'OEE'
         }
       ]
     },
-    { label: 'PPCPM', 
-      icon: 'po-icon-manufacture', 
+    { label: 'PPCPM',
+      icon: 'po-icon-manufacture',
       shortLabel: 'PPCPM',
       subItems: [
-        { 
+        {
           label: 'Produção'
         }
       ]
@@ -53,10 +53,10 @@ export class ApplicationComponent implements OnInit {
       icon: 'po-icon-chart-area',
       shortLabel: 'Qual.',
       subItems: [
-        { 
+        {
           label: 'Pareto'
         },
-        { 
+        {
           label: 'Correlação'
         }
       ]

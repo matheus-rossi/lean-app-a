@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  loginMethod () {
+  loginMethod(): void {
     this.router.navigate(['/app']);
   }
 
