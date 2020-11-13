@@ -1,13 +1,27 @@
-<po-container>
-  <div class="row">
-    <div class="po-md-12 po-lg-12">
-      <pdf-viewer
-        src="https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf"
-        [original-size]="true"
-        [fit-to-page]="true"
-
-      >
-      </pdf-viewer>
-    </div>
-  </div>
-</po-container>
+ <div class="row">
+   <div class="po-md-12">
+     <po-input
+     p-label="Código"
+     p-help="Código do Documento"
+     [(ngModel)]="code"
+     (keyup.enter)="searchDocument()"
+     >
+   </po-input>
+   </div>
+   <div class="po-md-12">
+     <po-button 
+     p-label="Procurar"
+     p-icon="po-icon-export"
+     (p-click)="searchDocument()"
+     >
+     </po-button>
+   </div>
+   <div class="po-md-12 po-lg-12">
+     <pdf-viewer
+       [src]="pdfCode"
+       [original-size]="true"
+       [fit-to-page]="true"
+     >
+     </pdf-viewer>
+   </div>
+ </div>

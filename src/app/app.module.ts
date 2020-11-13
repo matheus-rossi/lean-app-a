@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
@@ -39,6 +40,7 @@ import { ViewerComponent } from './application/ppcpm/project/viewer/viewer.compo
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot([]),
+    HttpClientModule,
     PoModule,
     PoTemplatesModule,
     PoPageLoginModule,

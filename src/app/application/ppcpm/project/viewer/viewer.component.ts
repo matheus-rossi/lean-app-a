@@ -5,11 +5,21 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './viewer.component.html',
   styleUrls: ['./viewer.component.css']
 })
+
 export class ViewerComponent implements OnInit {
+
+  apiUrl: string = 'http://192.168.5.221:8080/';
+  code: string;
+  pdfCode: string;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public searchDocument(): void {
+    this.pdfCode = `${this.apiUrl}` + `${this.code}` + '.pdf'
+
   }
 
 }
