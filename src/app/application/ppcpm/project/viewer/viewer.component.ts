@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class ViewerComponent implements OnInit {
 
-  apiUrl: string = 'http://192.168.5.221:8080/';
+  apiUrl: string = 'https://192.168.5.221:8080/';
   code: string;
   pdfCode: string;
 
@@ -19,7 +19,7 @@ export class ViewerComponent implements OnInit {
 
   public searchDocument(): void {
     this.pdfCode = `${this.apiUrl}` + `${this.code}` + '.pdf'
-
+    console.log(this.pdfCode);
   }
 
 }
