@@ -19,7 +19,6 @@ export class ProjectViewerComponent implements OnInit {
 
   public searchDocument(): void {
     this.pdfCode = `${this.apiUrl}` + `${this.code}` + '.pdf';
-    console.log(this.pdfCode);
   }
 
 }

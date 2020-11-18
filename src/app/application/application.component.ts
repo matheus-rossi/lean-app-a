@@ -14,6 +14,7 @@ export class ApplicationComponent implements OnInit {
   menus: Array<PoMenuItem> = [
     {
       label: 'Página Inicial',
+      shortLabel: 'Início',
       icon: 'po-icon-home',
       link: '/app'
     },    
