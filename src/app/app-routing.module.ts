@@ -10,7 +10,7 @@ import { GboIncludeComponent } from './application/process/gbo/include/include.c
 
 import { PpcpmComponent } from './application/ppcpm/ppcpm.component';
 import { ProjectComponent } from './application/ppcpm/project/project.component';
-import { ViewerComponent } from './application/ppcpm/project/viewer/viewer.component';
+import { ProjectViewerComponent } from './application/ppcpm/project/project-viewer/project-viewer.component';
 
 const routes: Routes = [
   { path: '',
@@ -49,7 +49,7 @@ const routes: Routes = [
     {
       path: 'ppcpm',
       component: PpcpmComponent,
-      children: [        
+      children: [
         {
           path: 'project',
           component: ProjectComponent,
@@ -58,10 +58,10 @@ const routes: Routes = [
               path: '',
               pathMatch: 'full',
               redirectTo: 'viewer'
-            },  
+            },
             {
               path: 'viewer',
-              component: ViewerComponent
+              component: ProjectViewerComponent
             }
           ]
         }

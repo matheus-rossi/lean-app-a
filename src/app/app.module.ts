@@ -22,7 +22,7 @@ import { GboIncludeComponent } from './application/process/gbo/include/include.c
 
 import { PpcpmComponent } from './application/ppcpm/ppcpm.component';
 import { ProjectComponent } from './application/ppcpm/project/project.component';
-import { ViewerComponent } from './application/ppcpm/project/viewer/viewer.component';
+import { ProjectViewerComponent } from './application/ppcpm/project/project-viewer/project-viewer.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,7 @@ import { ViewerComponent } from './application/ppcpm/project/viewer/viewer.compo
     GboIncludeComponent,
     PpcpmComponent,
     ProjectComponent,
-    ViewerComponent
+    ProjectViewerComponent
   ],
   imports: [
     BrowserModule,

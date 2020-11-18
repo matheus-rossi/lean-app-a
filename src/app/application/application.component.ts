@@ -12,7 +12,13 @@ export class ApplicationComponent implements OnInit {
   menuItemSelected: string;
 
   menus: Array<PoMenuItem> = [
-    { label: 'Eng de Processos',
+    {
+      label: 'Página Inicial',
+      icon: 'po-icon-home',
+      link: '/app'
+    },    
+    { 
+      label: 'Eng de Processos',
       icon: 'po-icon-settings',
       shortLabel: 'Eng. Proc.',
       subItems: [

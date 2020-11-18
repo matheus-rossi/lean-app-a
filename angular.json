@@ -32,7 +32,14 @@
               "./node_modules/@po-ui/style/css/po-theme-default.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "c3",
+              "lodash",
+              "ng2-pdf-viewer",
+              "pdfjs-dist/build/pdf",
+              "pdfjs-dist/web/pdf_viewer"
+            ]
           },
           "configurations": {
             "production": {
