@@ -15,6 +15,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ApplicationComponent } from './application/application.component';
+import { ApplicationHomeComponent } from './application/application-home/application-home.component';
 
 import { ProcessComponent } from './application/process/process.component';
 import { GboComponent } from './application/process/gbo/gbo.component';
@@ -34,7 +35,8 @@ import { ProjectViewerComponent } from './application/ppcpm/project/project-view
     GboIncludeComponent,
     PpcpmComponent,
     ProjectComponent,
-    ProjectViewerComponent
+    ProjectViewerComponent,
+    ApplicationHomeComponent
   ],
   imports: [
     BrowserModule,

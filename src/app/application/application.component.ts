@@ -16,9 +16,9 @@ export class ApplicationComponent implements OnInit {
       label: 'Página Inicial',
       shortLabel: 'Início',
       icon: 'po-icon-home',
-      link: '/app'
-    },    
-    { 
+      link: '/app/home'
+    },
+    {
       label: 'Eng de Processos',
       icon: 'po-icon-settings',
       shortLabel: 'Eng. Proc.',

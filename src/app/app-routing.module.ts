@@ -2,6 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { ApplicationComponent } from './application/application.component';
+import { ApplicationHomeComponent } from './application/application-home/application-home.component';
 
 import { ProcessComponent } from './application/process/process.component';
 
@@ -13,7 +14,8 @@ import { ProjectComponent } from './application/ppcpm/project/project.component'
 import { ProjectViewerComponent } from './application/ppcpm/project/project-viewer/project-viewer.component';
 
 const routes: Routes = [
-  { path: '',
+  {
+    path: '',
     pathMatch: 'full',
     redirectTo: 'login'
   },
@@ -25,6 +27,10 @@ const routes: Routes = [
     path: 'app',
     component: ApplicationComponent,
     children: [
+      {
+        path: 'home',
+        component: ApplicationHomeComponent
+      },
       {
       path:  'process',
       component:  ProcessComponent,
