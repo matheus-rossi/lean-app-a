@@ -6,6 +6,10 @@
   margin: 0 !important;
 }
 
-.no-padding {
-  padding: 0 !important;
+.po-progress {
+  margin-bottom: 0.15em !important;
+}
+
+.po-divider {
+  margin-bottom: 0.15em !important;
 }

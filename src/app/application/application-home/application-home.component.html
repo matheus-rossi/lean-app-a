@@ -1,1 +1,37 @@
-<po-page-default p-title="Lean Manufacturing"></po-page-default>
+<po-page-default p-title="Lean Manufacturing">
+  <po-container>
+    <div class="row">
+      <div class="po-font-subtitle po-md-12">
+        RoadMap
+      </div>
+      <br><br>
+      <div
+        class="po-md-12"
+        *ngFor="let item of projectStatus"
+      >
+      <po-divider
+        p-label="{{ item.domain }}"
+      >
+      </po-divider>
+      <br>
+      <div class="row">
+        <div 
+          *ngFor="let subitem of item.subDomain"
+          class="po-md-6"  
+        >
+          <po-progress
+            p-info="{{ subitem.situation }}"
+            p-info-icon="infoIcon"
+            p-status="{{ subitem.status }}"
+            p-text="{{ subitem.text }}"
+            p-value="{{ subitem.value }}"
+          >
+          </po-progress>
+        </div>
+      </div>
+      </div>
+    </div>
+    
+
+  </po-container>
+</po-page-default>
