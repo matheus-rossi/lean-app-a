@@ -42,10 +42,15 @@ export class ApplicationComponent implements OnInit {
         }
       ]
     },
-    { label: 'PPCPM',
+    {
+      label: 'PPCPM',
       icon: 'po-icon-manufacture',
       shortLabel: 'PPCPM',
       subItems: [
+        {
+          label: 'Ops',
+          link: '/app/ppcpm/po'
+        },
         {
           label: 'Projetos',
           link: '/app/ppcpm/project'
@@ -74,7 +79,13 @@ export class ApplicationComponent implements OnInit {
           label: 'ROI'
         }
       ]
-    }
+    },
+    {
+      label: 'Cadeia de Ajuda',
+      shortLabel: 'Ajuda',
+      icon: 'po-icon-help',
+      link: '/app/helpcenter/home'
+    },
   ];
 
   constructor() { }

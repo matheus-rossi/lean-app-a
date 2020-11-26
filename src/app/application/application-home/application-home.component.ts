@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PoPageAction } from '@po-ui/ng-components';
 
 @Component({
   selector: 'app-application-home',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./application-home.component.css']
 })
 export class ApplicationHomeComponent implements OnInit {
+
+  public readonly actions: Array<PoPageAction> = [
+    { label: 'Ajuda', url: 'https://www.linkedin.com/in/matheus-sandrini-rossi/', icon: 'po-icon-help' }
+  ];
 
   constructor() { }
 
@@ -15,9 +20,9 @@ export class ApplicationHomeComponent implements OnInit {
       subDomain: [
         {
           text: 'GBO',
-          situation: '100%',
-          status: 'success',
-          value: 100
+          situation: '90%',
+          status: 'info',
+          value: 90
         },
         {
           text: 'TRF',
@@ -33,6 +38,74 @@ export class ApplicationHomeComponent implements OnInit {
         },
         {
           text: 'OEE / TEEP',
+          situation: '0%',
+          status: 'info',
+          value: 0
+        }
+      ]
+    },
+    {
+      domain: 'PPCPM',
+      subDomain: [
+        {
+          text: 'Visualização Projetos',
+          situation: '100%',
+          status: 'success',
+          value: 100
+        },
+        {
+          text: 'Centro de OPs',
+          situation: '0%',
+          status: 'info',
+          value: 0
+        },
+        {
+          text: 'Carga Máquina',
+          situation: '0%',
+          status: 'info',
+          value: 0
+        }
+      ]
+    },
+    {
+      domain: 'Qualidade',
+      subDomain: [
+        {
+          text: 'Pareto',
+          situation: '0%',
+          status: 'info',
+          value: 0
+        },
+        {
+          text: 'Correlação',
+          situation: '0%',
+          status: 'info',
+          value: 0
+        },
+        {
+          text: '5w2hg',
+          situation: '0%',
+          status: 'info',
+          value: 0
+        }
+      ]
+    },
+    {
+      domain: 'Financeiro',
+      subDomain: [
+        {
+          text: 'ROI',
+          situation: '0%',
+          status: 'info',
+          value: 0
+        }
+      ]
+    },
+    {
+      domain: 'Ajuda',
+      subDomain: [
+        {
+          text: 'Cadeia de Ajuda',
           situation: '0%',
           status: 'info',
           value: 0

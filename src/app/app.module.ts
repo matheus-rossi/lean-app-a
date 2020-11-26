@@ -24,6 +24,11 @@ import { GboIncludeComponent } from './application/process/gbo/include/include.c
 import { PpcpmComponent } from './application/ppcpm/ppcpm.component';
 import { ProjectComponent } from './application/ppcpm/project/project.component';
 import { ProjectViewerComponent } from './application/ppcpm/project/project-viewer/project-viewer.component';
+import { PoComponent } from './application/ppcpm/po/po.component';
+import { PoViewerComponent } from './application/ppcpm/po/po-viewer/po-viewer.component';
+
+import { HelpcenterComponent } from './application/helpcenter/helpcenter.component';
+import { HelpcenterHomeComponent } from './application/helpcenter/helpcenter-home/helpcenter-home.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +41,11 @@ import { ProjectViewerComponent } from './application/ppcpm/project/project-view
     PpcpmComponent,
     ProjectComponent,
     ProjectViewerComponent,
-    ApplicationHomeComponent
+    ApplicationHomeComponent,
+    HelpcenterComponent,
+    HelpcenterHomeComponent,
+    PoComponent,
+    PoViewerComponent
   ],
   imports: [
     BrowserModule,

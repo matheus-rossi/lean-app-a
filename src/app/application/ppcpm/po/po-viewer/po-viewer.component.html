@@ -1,0 +1,62 @@
+<po-container>
+  <div class="row">
+    <div class="po-xs-11 po-sm-11 po-md-11 po-lg-2 po-p-0">
+      <po-input
+        p-label="OP"
+        p-placeholder="Ordem de Produção"
+        [(ngModel)]="po"
+      >
+      </po-input>
+    </div>
+    <div class="po-xs-1 po-sm-1 po-md-1 po-lg-1 po-p-0" style="margin-top: 2em;">
+      <po-button
+        p-icon="po-icon-qr-code"
+        p-type="string"
+      ></po-button>
+    </div>
+    <div class="po-xs-11 po-sm-11 po-md-11 po-lg-2 po-p-0">
+      <po-input
+        p-label="Produto"
+        p-placeholder="Código do Produto"
+        [(ngModel)]="product"
+      >
+      </po-input>
+    </div>
+    <div class="po-xs-1 po-sm-1 po-md-1 po-lg-1 po-p-0" style="margin-top: 2em;">
+      <po-button
+        p-icon="po-icon-qr-code"
+        p-type="string"
+      ></po-button>
+    </div>
+    <div class="po-xs-11 po-sm-11 po-md-11 po-lg-2 po-p-0">
+      <po-input
+        p-label="Recurso"
+        p-placeholder="Máquina"
+        [(ngModel)]="resource"
+      >
+      </po-input>
+    </div>
+    <div class="po-xs-1 po-sm-1 po-md-1 po-lg-1 po-p-0" style="margin-top: 2em;">
+      <po-button
+        p-icon="po-icon-qr-code"
+        p-type="string"
+      ></po-button>
+    </div>
+    <div class="po-md-12">
+      <po-divider></po-divider>
+    </div>
+    <div class="po-md-12">
+      <div id="chart"></div>
+    </div>
+    <div class="po-md-12">
+      <po-table 
+        p-sort="true" 
+        [p-columns]="columns" 
+        [p-items]="items" 
+        p-striped="true"
+        p-selectable
+      >
+      </po-table>
+    </div>
+  </div>
+</po-container>

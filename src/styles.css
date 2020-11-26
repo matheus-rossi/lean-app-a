@@ -13,3 +13,16 @@
 .po-divider {
   margin-bottom: 0.15em !important;
 }
+
+.po-divider-label {
+  font-size: 0.75em !important;
+}
+
+.po-wrapper-menu-panel .po-page-header, .po-wrapper .po-page-header {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.po-container {
+  padding: 1em;
+}
