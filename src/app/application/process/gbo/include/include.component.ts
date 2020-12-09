@@ -25,6 +25,7 @@ import * as _ from 'lodash';
 
 export class GboIncludeComponent implements OnInit, AfterViewInit {
 
+  sequence: number = 0;
   takt: number;
   workCenter: string;
   description: string;
@@ -33,6 +34,7 @@ export class GboIncludeComponent implements OnInit, AfterViewInit {
   chartData: any;
 
   readonly columns: Array<PoTableColumn> = [
+    { property: 'sequence', type: 'number', label: 'Seq.' },
     { property: 'takt', type: 'number', label: 'Takt' },
     { property: 'cycle', type: 'number', label: 'Ciclo' },
     { property: 'workCenter', label: 'Centro Trabalho' },
@@ -42,6 +44,7 @@ export class GboIncludeComponent implements OnInit, AfterViewInit {
 
   items: Array<any> = [
     {
+      sequence: 1,
       takt: 50,
       workCenter: 'Pré-Montagem',
       description: 'Operação 1',
@@ -49,6 +52,7 @@ export class GboIncludeComponent implements OnInit, AfterViewInit {
       lowRepCycle: 28
     },
     {
+      sequence: 2,
       takt: 50,
       cycle: 40,
       workCenter: 'Pré-Montagem',
@@ -56,6 +60,7 @@ export class GboIncludeComponent implements OnInit, AfterViewInit {
       lowRepCycle: 28
     },
     {
+      sequence: 3,
       takt: 50,
       cycle: 40,
       workCenter: 'Montagem',
@@ -81,6 +86,7 @@ export class GboIncludeComponent implements OnInit, AfterViewInit {
 
   addOperation(): void {
     const item = {
+      sequence: this.sequence + 1,
       takt: this.takt,
       cycle: this.calculateCycleTime(this.takt),
       workCenter: this.workCenter,
@@ -109,8 +115,8 @@ export class GboIncludeComponent implements OnInit, AfterViewInit {
 
   }
 
-  calculateCycleTime(takt: number): string {
-    return (takt * 0.8).toFixed(2);
+  calculateCycleTime(takt: number): number {
+    return (takt * 0.8);
   }
 
   deleteOperation(): void {
@@ -121,7 +127,9 @@ export class GboIncludeComponent implements OnInit, AfterViewInit {
         title: 'Remover itens',
         literals: { cancel: 'Cancelar', confirm: 'Sim' },
         message: `Você gostaria de remover esses ${selectedItems.length} itens da lista?`,
-        confirm: () => alert('feito'),
+        confirm: () => {
+          console.table(selectedItems);
+        },
         cancel: () => {}
       });
     }
