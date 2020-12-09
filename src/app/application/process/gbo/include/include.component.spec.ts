@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { IncludeGboComponent } from './include.component';
 
@@ -6,7 +6,7 @@ describe('IncludeGboComponent', () => {
   let component: IncludeGboComponent;
   let fixture: ComponentFixture<IncludeGboComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ IncludeGboComponent ]
     })

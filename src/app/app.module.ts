@@ -50,7 +50,7 @@ import { HelpcenterHomeComponent } from './application/helpcenter/helpcenter-hom
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot([]),
+    RouterModule.forRoot([], { relativeLinkResolution: 'legacy' }),
     HttpClientModule,
     PoModule,
     PoTemplatesModule,
