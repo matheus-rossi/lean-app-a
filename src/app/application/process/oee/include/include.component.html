@@ -90,20 +90,29 @@
       </po-button>
     </div>
     <div *ngIf="showResult">
-      <div class="po-md-4 po-mt-1">
+      <div class="po-md-3 po-mt-1">
         <po-widget p-title="Resultado do calculo do OEE/TEEP" p-primary="true">
           <div class="po-font-title po-text-center">{{ this.oeeRate }} %</div>
-          <div class="po-text-center">Para entender melhor esse resultado, clique no botão de ajuda a cima.</div>
+          <div class="po-text-center">{{ this.oeeDescription }}</div>
         </po-widget>
       </div>
-      <div class="po-md-8">
-        <po-table 
-        [p-columns]="columns" 
-        [p-items]="items" 
-        p-striped="true"
-        p-hide-columns-manager="true"
-        >
-      </po-table>
+      <div class="po-md-3 po-mt-1">
+        <po-widget p-title="Disponibilidade">
+          <div class="po-font-title po-text-center">{{ this.availabilityRate }} %</div>
+          <div class="po-text-center">{{ this.oeeDescription }}</div>
+        </po-widget>
+      </div>
+      <div class="po-md-3 po-mt-1">
+        <po-widget p-title="Performance">
+          <div class="po-font-title po-text-center">{{ this.performanceRate }} %</div>
+          <div class="po-text-center">{{ this.oeeDescription }}</div>
+        </po-widget>
+      </div>
+      <div class="po-md-3 po-mt-1">
+        <po-widget p-title="Qualidade">
+          <div class="po-font-title po-text-center">{{ this.qualityRate }} %</div>
+          <div class="po-text-center">{{ this.oeeDescription }}</div>
+        </po-widget>
       </div>
     </div>
   </div>
