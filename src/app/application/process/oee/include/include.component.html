@@ -1,0 +1,111 @@
+<po-container>
+  <div class="row">
+    <div class="po-md-12">
+      <po-divider
+        p-label="Disponibilidade"
+      >
+      </po-divider>
+    </div>
+    <div>
+      <po-number 
+        class="po-md-4"
+        p-label="Tempo Total Disponível"
+        p-placeholder="Tempo disponível para produção"
+        [(ngModel)]="totalAvaliableTime"
+        p-name="Tempo Total"
+      >
+      </po-number>
+      <po-number 
+        class="po-md-4"
+        p-label="Tempo Parado Programado"
+        p-placeholder="5s, reuniões ..."
+        [(ngModel)]="totalPlannedStopsTime"
+        p-name="Tempo Total"
+      >
+      </po-number>
+      <po-number 
+        class="po-md-4"
+        p-label="Tempo Parado Não Programado"
+        p-placeholder="Quebras, Falta de Peças ..."
+        [(ngModel)]="totalUnplannedStopsTime"
+        p-name="Tempo Total"
+      >
+      </po-number>
+    </div>
+    <div class="po-md-12">
+      <po-divider
+        p-label="Performance"
+      >
+      </po-divider>
+    </div>
+    <div>
+      <po-number 
+        class="po-md-4"
+        p-label="Tempo Total Teórico"
+        p-placeholder="Tempo calculado de produção"
+        [(ngModel)]="totalScheduledTime"
+        p-name="Tempo Total"
+      >
+      </po-number>
+      <po-number 
+        class="po-md-4"
+        p-label="Tempo Total de Produção"
+        p-placeholder="Tempo real de produção de peças boas"
+        [(ngModel)]="totalProductiveTime"
+        p-name="Tempo Total"
+      >
+      </po-number>
+    </div>
+    <div class="po-md-12">
+      <po-divider
+        p-label="Qualidade"
+      >
+      </po-divider>
+    </div>
+    <div>
+      <po-number 
+        class="po-md-4"
+        p-label="Tempo Total de Produção de Peças Não Conformes"
+        p-placeholder="Tempo real de retrabalho, sucata ..."
+        [(ngModel)]="totalNonConformingPartsTime"
+        p-name="Tempo Total"
+      >
+      </po-number>
+    </div>
+    <div class="po-md-12">
+      <po-button
+        p-icon="po-icon-calculator"
+        p-label="Calcular"
+        p-type="string"
+        (p-click)="insertOee()"
+      >
+      </po-button>
+      <po-button
+      class="po-ml-1"
+        p-icon="po-icon-clear-content"
+        p-label="Limpar"
+        p-type="string"
+        (p-click)="oeeClean()"
+      >
+      </po-button>
+    </div>
+    <div *ngIf="showResult">
+      <div class="po-md-4 po-mt-1">
+        <po-widget p-title="Resultado do calculo do OEE/TEEP" p-primary="true">
+          <div class="po-font-title po-text-center">{{ this.oeeRate }} %</div>
+          <div class="po-text-center">Para entender melhor esse resultado, clique no botão de ajuda a cima.</div>
+        </po-widget>
+      </div>
+      <div class="po-md-8">
+        <po-table 
+        [p-columns]="columns" 
+        [p-items]="items" 
+        p-striped="true"
+        p-hide-columns-manager="true"
+        >
+      </po-table>
+      </div>
+    </div>
+  </div>
+
+</po-container>

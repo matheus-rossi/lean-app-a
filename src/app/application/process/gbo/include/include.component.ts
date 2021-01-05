@@ -25,7 +25,7 @@ import * as _ from 'lodash';
 
 export class GboIncludeComponent implements OnInit, AfterViewInit {
 
-  sequence: number = 0;
+  sequence = 0;
   takt: number;
   workCenter: string;
   description: string;
@@ -85,8 +85,10 @@ export class GboIncludeComponent implements OnInit, AfterViewInit {
   }
 
   addOperation(): void {
+    this.sequence += 1;
+
     const item = {
-      sequence: this.sequence + 1,
+      sequence: this.sequence,
       takt: this.takt,
       cycle: this.calculateCycleTime(this.takt),
       workCenter: this.workCenter,
@@ -128,7 +130,7 @@ export class GboIncludeComponent implements OnInit, AfterViewInit {
         literals: { cancel: 'Cancelar', confirm: 'Sim' },
         message: `Você gostaria de remover esses ${selectedItems.length} itens da lista?`,
         confirm: () => {
-          console.table(selectedItems);
+          this.removeSelectedItems(selectedItems);
         },
         cancel: () => {}
       });
@@ -142,6 +144,11 @@ export class GboIncludeComponent implements OnInit, AfterViewInit {
   generateChart(): void {
     this.chart();
     this.generateChartData(this.items);
+  }
+
+  removeSelectedItems(selectedItems): void {
+    this.items = this.items.filter(item => !selectedItems.includes(item));
+    this.generateChart();
   }
 
   obcCalc(obc: Array<any>): object {

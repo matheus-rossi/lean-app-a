@@ -12,17 +12,13 @@ export class GboComponent implements OnInit {
     { label: 'Ajuda', url: 'https://exoconsultoria.com.br/estudo-de-caso-01-gbo/', icon: 'po-icon-help' },
     { label: 'Incluir', url: 'https://exoconsultoria.com.br/estudo-de-caso-01-gbo/', icon: 'po-icon-help' },
     { label: 'Importar', url: 'https://exoconsultoria.com.br/estudo-de-caso-01-gbo/', icon: 'po-icon-help' },
-    { label: 'Exportar', url: 'https://exoconsultoria.com.br/estudo-de-caso-01-gbo/', icon: 'po-icon-help' } 
+    { label: 'Exportar', url: 'https://exoconsultoria.com.br/estudo-de-caso-01-gbo/', icon: 'po-icon-help' }
   ];
 
   constructor() { }
 
   ngOnInit(): void {
 
-  }
-
-  changeRouter (this) {
-    console.table(this.attendances)
   }
 
 }

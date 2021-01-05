@@ -50,7 +50,10 @@
       ></po-button>
       <po-divider></po-divider>
     </div>
-    <div class="po-md-12">
+    <div 
+      class="po-md-12" 
+      (onResize)="generateChart()"
+    >
       <div id="chart"></div>
     </div>
     <div class="po-md-12">

@@ -37,8 +37,9 @@ export class ApplicationComponent implements OnInit {
           shortLabel: 'GPT'
         },
         {
-          label: 'Eficiência',
-          shortLabel: 'OEE'
+          label: 'OEE / TEEP - Eficiência',
+          shortLabel: 'OEE',
+          link: '/app/process/oee'
         }
       ]
     },

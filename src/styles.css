@@ -23,6 +23,10 @@
   padding-bottom: 0;
 }
 
+.po-wrapper-menu-panel .po-page .po-page-content, .po-wrapper .po-page .po-page-content {
+  padding-top: 0.75em;
+}
+
 .po-container {
-  padding: 1em;
+  padding: 0.5em;
 }

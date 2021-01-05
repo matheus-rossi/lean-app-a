@@ -10,6 +10,8 @@ import { PoModule } from '@po-ui/ng-components';
 import { PoTemplatesModule } from '@po-ui/ng-templates';
 import { PoPageLoginModule } from '@po-ui/ng-templates';
 
+import { NgxResizeObserverModule } from 'ngx-resize-observer';
+
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 import { AppComponent } from './app.component';
@@ -20,6 +22,8 @@ import { ApplicationHomeComponent } from './application/application-home/applica
 import { ProcessComponent } from './application/process/process.component';
 import { GboComponent } from './application/process/gbo/gbo.component';
 import { GboIncludeComponent } from './application/process/gbo/include/include.component';
+import { OeeComponent } from './application/process/oee/oee.component';
+import { OeeIncludeComponent } from './application/process/oee/include/include.component';
 
 import { PpcpmComponent } from './application/ppcpm/ppcpm.component';
 import { ProjectComponent } from './application/ppcpm/project/project.component';
@@ -45,7 +49,9 @@ import { HelpcenterHomeComponent } from './application/helpcenter/helpcenter-hom
     HelpcenterComponent,
     HelpcenterHomeComponent,
     PoComponent,
-    PoViewerComponent
+    PoViewerComponent,
+    OeeComponent,
+    OeeIncludeComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +62,8 @@ import { HelpcenterHomeComponent } from './application/helpcenter/helpcenter-hom
     PoTemplatesModule,
     PoPageLoginModule,
     FormsModule,
-    PdfViewerModule
+    PdfViewerModule,
+    NgxResizeObserverModule
   ],
   providers: [],
   bootstrap: [AppComponent]

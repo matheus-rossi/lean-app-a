@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import {
-  PoTableColumn,
+  PoTableColumn
 } from '@po-ui/ng-components';
-
 
 @Component({
   selector: 'app-po-viewer',
@@ -33,9 +32,9 @@ export class PoViewerComponent implements OnInit {
     { property: 'workCenter', label: 'Centro de Trabalho' }
   ];
 
-  po:string;
-  product:string;
-  workCenter:string;
+  po: string;
+  product: string;
+  workCenter: string;
   resource: string;
 
   items: Array<any> = [
