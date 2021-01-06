@@ -35,6 +35,12 @@ export class OeeIncludeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  dataChanged(): void {
+    if(this.totalAvaliableTime && this.totalPlannedStopsTime && this.totalUnplannedStopsTime !== null) {
+      this.totalScheduledTime = this.totalAvaliableTime - this.totalPlannedStopsTime - this.totalUnplannedStopsTime
+    }
+  }
+
   insertOee(): void {
     if (this.totalAvaliableTime && this.totalNonConformingPartsTime && this.totalPlannedStopsTime &&
         this.totalProductiveTime && this.totalScheduledTime && this.totalUnplannedStopsTime != null) {
@@ -48,7 +54,6 @@ export class OeeIncludeComponent implements OnInit {
     const scheduledMinusLosses = this.totalAvaliableTime - this.totalPlannedStopsTime - this.totalUnplannedStopsTime;
     this.availabilityRate = Math.floor((scheduledMinusLosses / this.totalAvaliableTime) * 100);
 
-    const actualUptime = scheduledMinusLosses - this.totalProductiveTime;
     this.performanceRate = Math.floor((this.totalProductiveTime / scheduledMinusLosses) * 100);
 
     this.qualityRate = Math.floor(( 1 - (this.totalNonConformingPartsTime / this.totalProductiveTime)) *100);

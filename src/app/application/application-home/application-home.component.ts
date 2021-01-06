@@ -38,9 +38,9 @@ export class ApplicationHomeComponent implements OnInit {
         },
         {
           text: 'OEE / TEEP',
-          situation: '0%',
-          status: 'info',
-          value: 0
+          situation: '100%',
+          status: 'success',
+          value: 100
         }
       ]
     },
@@ -55,9 +55,9 @@ export class ApplicationHomeComponent implements OnInit {
         },
         {
           text: 'Centro de OPs',
-          situation: '0%',
+          situation: '20%',
           status: 'info',
-          value: 0
+          value: 20
         },
         {
           text: 'Carga Máquina',

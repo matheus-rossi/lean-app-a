@@ -12,6 +12,7 @@
         p-label="Tempo Total Disponível"
         p-placeholder="Tempo disponível para produção"
         [(ngModel)]="totalAvaliableTime"
+        (ngModelChange)="dataChanged()"
         p-name="Tempo Total"
       >
       </po-number>
@@ -20,6 +21,7 @@
         p-label="Tempo Parado Programado"
         p-placeholder="5s, reuniões ..."
         [(ngModel)]="totalPlannedStopsTime"
+        (ngModelChange)="dataChanged()"
         p-name="Tempo Total"
       >
       </po-number>
@@ -28,6 +30,7 @@
         p-label="Tempo Parado Não Programado"
         p-placeholder="Quebras, Falta de Peças ..."
         [(ngModel)]="totalUnplannedStopsTime"
+        (ngModelChange)="dataChanged()"
         p-name="Tempo Total"
       >
       </po-number>
@@ -44,6 +47,7 @@
         p-label="Tempo Total Teórico"
         p-placeholder="Tempo calculado de produção"
         [(ngModel)]="totalScheduledTime"
+        p-disabled="true"
         p-name="Tempo Total"
       >
       </po-number>
