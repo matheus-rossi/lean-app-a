@@ -25,7 +25,6 @@ import * as _ from 'lodash';
 
 export class GboIncludeComponent implements OnInit, AfterViewInit {
 
-  sequence = 0;
   takt: number;
   workCenter: string;
   description: string;
@@ -34,7 +33,6 @@ export class GboIncludeComponent implements OnInit, AfterViewInit {
   chartData: any;
 
   readonly columns: Array<PoTableColumn> = [
-    { property: 'sequence', type: 'number', label: 'Seq.' },
     { property: 'takt', type: 'number', label: 'Takt' },
     { property: 'cycle', type: 'number', label: 'Ciclo' },
     { property: 'workCenter', label: 'Centro Trabalho' },
@@ -44,7 +42,6 @@ export class GboIncludeComponent implements OnInit, AfterViewInit {
 
   items: Array<any> = [
     {
-      sequence: 1,
       takt: 50,
       workCenter: 'Pré-Montagem',
       description: 'Operação 1',
@@ -52,7 +49,6 @@ export class GboIncludeComponent implements OnInit, AfterViewInit {
       lowRepCycle: 28
     },
     {
-      sequence: 2,
       takt: 50,
       cycle: 40,
       workCenter: 'Pré-Montagem',
@@ -60,7 +56,6 @@ export class GboIncludeComponent implements OnInit, AfterViewInit {
       lowRepCycle: 28
     },
     {
-      sequence: 3,
       takt: 50,
       cycle: 40,
       workCenter: 'Montagem',
@@ -85,10 +80,8 @@ export class GboIncludeComponent implements OnInit, AfterViewInit {
   }
 
   addOperation(): void {
-    this.sequence += 1;
 
     const item = {
-      sequence: this.sequence,
       takt: this.takt,
       cycle: this.calculateCycleTime(this.takt),
       workCenter: this.workCenter,
@@ -98,7 +91,6 @@ export class GboIncludeComponent implements OnInit, AfterViewInit {
 
     if (this.takt && this.workCenter && this.description && this.lowRepCycle != null) {
       this.items.push(item);
-
       this.takt = undefined;
       this.workCenter = undefined;
       this.description = undefined;

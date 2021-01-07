@@ -9,6 +9,8 @@ import { GboComponent } from './application/process/gbo/gbo.component';
 import { GboIncludeComponent } from './application/process/gbo/include/include.component';
 import { OeeComponent } from './application/process/oee/oee.component';
 import { OeeIncludeComponent } from './application/process/oee/include/include.component';
+import { SmedComponent } from './application/process/smed/smed.component';
+import { SmedIncludeComponent } from './application/process/smed/include/include.component';
 
 import { PpcpmComponent } from './application/ppcpm/ppcpm.component';
 import { ProjectComponent } from './application/ppcpm/project/project.component';
@@ -68,6 +70,21 @@ const routes: Routes = [
             {
               path: 'include',
               component: OeeIncludeComponent
+            }
+          ]
+        },
+        {
+          path: 'smed',
+          component: SmedComponent,
+          children: [
+            {
+              path: '',
+              pathMatch: 'full',
+              redirectTo: 'include'
+            },
+            {
+              path: 'include',
+              component: SmedIncludeComponent
             }
           ]
         }

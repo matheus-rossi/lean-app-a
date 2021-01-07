@@ -1,0 +1,92 @@
+<po-container>
+  <div class="row">
+    <div>
+      <po-input
+        class="po-md-6"
+        p-label="Descrição"
+        p-placeholder="O que está sendo feito?"
+        [(ngModel)]="operationDescription"
+      >
+      </po-input>
+      <po-number 
+        class="po-md-2"
+        p-label="Tempo da Operação"
+        p-placeholder="Quanto tempo?"
+        [(ngModel)]="time"
+        p-name="Tempo Total"
+      >
+      </po-number>
+    </div>
+    <div>
+      <po-select
+        name="setupType"
+        class="po-md-2"
+        p-label="Tipo de Setup"
+        [(ngModel)]="setupType"
+        [p-options]="[
+          { label: 'Interno', value: '01' },
+          { label: 'Externo', value: '02' }
+        ]"
+      >
+      </po-select>
+      <po-select
+        name="setupExternal"
+        class="po-md-2"
+        p-label="É ou Pode ser Externo?"
+        [(ngModel)]="canBeExternal"
+        [p-options]="[
+          { label: 'Sim', value: '01' },
+          { label: 'Não', value: '02' }
+        ]"
+      >
+      </po-select>
+    </div>
+    <div class="po-md-12">
+      <po-button
+        p-icon="po-icon-plus"
+        p-label="Adicionar"
+        p-type="string"
+        class="po-mr-1"
+        (p-click)="addItems()"
+      ></po-button>
+      <po-button
+        p-icon="po-icon-delete"
+        p-label="Remover"
+        p-type="string" 
+        class="po-mr-1"
+        (p-click)="deleteItens()"
+      ></po-button>
+      <po-divider></po-divider>
+    </div>
+    <div>
+      <div class="po-md-3 po-mt-1">
+        <po-widget p-title="Tempo Total Setup" p-primary="true">
+          <div class="po-font-title po-text-center">{{ this.totalSetupTime }}</div>
+        </po-widget>
+      </div>
+      <div class="po-md-3 po-mt-1">
+        <po-widget p-title="Ganho em %">
+          <div class="po-font-title po-text-center">{{ this.smedPercentuaGain }} %</div>
+        </po-widget>
+      </div>
+      <div class="po-md-3 po-mt-1">
+        <po-widget p-title="Ganho em Tempo">
+          <div class="po-font-title po-text-center">{{ this.smedTimeGain }}</div>
+        </po-widget>
+      </div>
+      <div class="po-md-12">
+        <po-table 
+          id="po-table-smed"
+          p-sort="true" 
+          p-hide-columns-manager="true"
+          [p-columns]="columns" 
+          [p-items]="items" 
+          [p-striped]="true"
+          p-selectable
+        >
+        </po-table>
+      </div>
+    </div>
+  </div>
+
+</po-container>

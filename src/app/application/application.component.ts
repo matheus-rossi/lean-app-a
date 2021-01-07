@@ -30,7 +30,8 @@ export class ApplicationComponent implements OnInit {
         },
         {
           label: 'Troca Rápida Ferramenta',
-          shortLabel: 'TRF'
+          shortLabel: 'TRF',
+          link: '/app/process/smed'
         },
         {
           label: 'Gestão do Posto de Trabalho',

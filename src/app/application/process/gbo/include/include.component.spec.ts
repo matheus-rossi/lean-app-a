@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { IncludeGboComponent } from './include.component';
+import { GboIncludeComponent } from './include.component';
 
-describe('IncludeGboComponent', () => {
-  let component: IncludeGboComponent;
-  let fixture: ComponentFixture<IncludeGboComponent>;
+describe('GboIncludeComponent', () => {
+  let component: GboIncludeComponent;
+  let fixture: ComponentFixture<GboIncludeComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ IncludeGboComponent ]
+      declarations: [ GboIncludeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IncludeGboComponent);
+    fixture = TestBed.createComponent(GboIncludeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

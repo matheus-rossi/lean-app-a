@@ -20,15 +20,15 @@ export class ApplicationHomeComponent implements OnInit {
       subDomain: [
         {
           text: 'GBO',
-          situation: '90%',
-          status: 'info',
-          value: 90
+          situation: '100%',
+          status: 'success',
+          value: 100
         },
         {
           text: 'TRF',
-          situation: '0%',
+          situation: '5%',
           status: 'info',
-          value: 0
+          value: 5
         },
         {
           text: 'GPT',

@@ -36,8 +36,8 @@ export class OeeIncludeComponent implements OnInit {
   }
 
   dataChanged(): void {
-    if(this.totalAvaliableTime && this.totalPlannedStopsTime && this.totalUnplannedStopsTime !== null) {
-      this.totalScheduledTime = this.totalAvaliableTime - this.totalPlannedStopsTime - this.totalUnplannedStopsTime
+    if (this.totalAvaliableTime && this.totalPlannedStopsTime && this.totalUnplannedStopsTime !== null) {
+      this.totalScheduledTime = this.totalAvaliableTime - this.totalPlannedStopsTime - this.totalUnplannedStopsTime;
     }
   }
 
@@ -56,19 +56,19 @@ export class OeeIncludeComponent implements OnInit {
 
     this.performanceRate = Math.floor((this.totalProductiveTime / scheduledMinusLosses) * 100);
 
-    this.qualityRate = Math.floor(( 1 - (this.totalNonConformingPartsTime / this.totalProductiveTime)) *100);
+    this.qualityRate = Math.floor(( 1 - (this.totalNonConformingPartsTime / this.totalProductiveTime)) * 100);
 
     const tempOeeRate = (this.availabilityRate / 100) * (this.performanceRate / 100) * (this.qualityRate / 100);
     this.oeeRate = Math.round((tempOeeRate + Number.EPSILON) * 100);
-    
+
     if (this.oeeRate < 30) {
-      this.oeeDescription = 'Sistema de produção com performance baixa'
+      this.oeeDescription = 'Sistema de produção com performance baixa';
     } else if (this.oeeRate >= 30 && this.oeeRate <= 60) {
-      this.oeeDescription = 'Sistema de produção com performance normal'
+      this.oeeDescription = 'Sistema de produção com performance normal';
     } else if (this.oeeRate > 60 && this.oeeRate <= 90) {
-      this.oeeDescription = 'Sistema de produção com performance alta'
+      this.oeeDescription = 'Sistema de produção com performance alta';
     } else if (this.oeeRate > 90) {
-      this.oeeDescription = 'Sistema de produção com performance excelente'
+      this.oeeDescription = 'Sistema de produção com performance excelente';
     }
 
     this.showResult = true;
