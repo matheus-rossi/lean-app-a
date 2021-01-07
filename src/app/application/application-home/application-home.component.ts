@@ -26,9 +26,9 @@ export class ApplicationHomeComponent implements OnInit {
         },
         {
           text: 'TRF',
-          situation: '5%',
-          status: 'info',
-          value: 5
+          situation: '100%',
+          status: 'success',
+          value: 100
         },
         {
           text: 'GPT',
