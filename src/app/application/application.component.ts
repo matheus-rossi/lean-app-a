@@ -65,7 +65,8 @@ export class ApplicationComponent implements OnInit {
       shortLabel: 'Qual.',
       subItems: [
         {
-          label: 'Pareto'
+          label: 'Pareto',
+          link: '/app/quality/pareto'
         },
         {
           label: 'Correlação'

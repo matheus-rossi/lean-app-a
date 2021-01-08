@@ -33,6 +33,10 @@ import { ProjectViewerComponent } from './application/ppcpm/project/project-view
 import { PoComponent } from './application/ppcpm/po/po.component';
 import { PoViewerComponent } from './application/ppcpm/po/po-viewer/po-viewer.component';
 
+import { QualityComponent } from './application/quality/quality.component';
+import { ParetoComponent } from './application/quality/pareto/pareto.component';
+import { ParetoIncludeComponent } from './application/quality/pareto/include/include.component';
+
 import { HelpcenterComponent } from './application/helpcenter/helpcenter.component';
 import { HelpcenterHomeComponent } from './application/helpcenter/helpcenter-home/helpcenter-home.component';
 
@@ -55,7 +59,10 @@ import { HelpcenterHomeComponent } from './application/helpcenter/helpcenter-hom
     OeeComponent,
     OeeIncludeComponent,
     SmedComponent,
-    SmedIncludeComponent
+    SmedIncludeComponent,
+    QualityComponent,
+    ParetoComponent,
+    ParetoIncludeComponent
   ],
   imports: [
     BrowserModule,

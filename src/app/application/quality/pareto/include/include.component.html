@@ -1,0 +1,54 @@
+<po-container>
+  <div class="row">
+    <div class="po-md-10">
+      <po-input
+        p-label="Descrição"
+        p-placeholder="O que foi medido?"
+        [(ngModel)]="description"
+      >
+      </po-input>
+    </div>
+    <div class="po-md-2">
+      <po-number
+        p-label="Quantidade"
+        p-placeholder="Quantas vezes ocorreu?"
+        [(ngModel)]="quantity"
+      >
+      </po-number>
+    </div>
+    <div class="po-md-12">
+      <po-button
+        p-icon="po-icon-plus"
+        p-label="Adicionar"
+        p-type="string"
+        class="po-mr-1"
+        (p-click)="addOperation()"
+      ></po-button>
+      <po-button
+        p-icon="po-icon-delete"
+        p-label="Remover"
+        p-type="string" 
+        class="po-mr-1"
+        (p-click)="deleteOperation()"
+      ></po-button>
+      <po-divider></po-divider>
+    </div>
+    <div
+      class="po-md-12"
+      (onResize)="generateChart()"
+    >
+      <div id="chart"></div>
+    </div>
+  </div>
+  <div class="po-md-12">
+    <po-table 
+      p-sort="true" 
+      [p-columns]="columns" 
+      p-hide-columns-manager="true"
+      [p-items]="items" 
+      [p-striped]="true"
+      p-selectable
+    >
+    </po-table>
+  </div>
+</po-container>

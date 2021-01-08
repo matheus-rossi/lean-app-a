@@ -72,9 +72,9 @@ export class ApplicationHomeComponent implements OnInit {
       subDomain: [
         {
           text: 'Pareto',
-          situation: '0%',
-          status: 'info',
-          value: 0
+          situation: '100%',
+          status: 'success',
+          value: 100
         },
         {
           text: 'Correlação',

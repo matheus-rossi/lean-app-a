@@ -18,6 +18,10 @@ import { ProjectViewerComponent } from './application/ppcpm/project/project-view
 import { PoComponent } from './application/ppcpm/po/po.component';
 import { PoViewerComponent } from './application/ppcpm/po/po-viewer/po-viewer.component';
 
+import { QualityComponent } from './application/quality/quality.component';
+import { ParetoComponent } from './application/quality/pareto/pareto.component';
+import { ParetoIncludeComponent } from './application/quality/pareto/include/include.component';
+
 import { HelpcenterComponent } from './application/helpcenter/helpcenter.component';
 import { HelpcenterHomeComponent } from './application/helpcenter/helpcenter-home/helpcenter-home.component';
 
@@ -121,6 +125,27 @@ const routes: Routes = [
             {
               path: 'viewer',
               component: PoViewerComponent
+            }
+          ]
+        }
+      ]
+    },
+    {
+      path: 'quality',
+      component: QualityComponent,
+      children: [
+        {
+          path: 'pareto',
+          component: ParetoComponent,
+          children: [
+            {
+              path: '',
+              pathMatch: 'full',
+              redirectTo: 'include'
+            },
+            {
+              path: 'include',
+              component: ParetoIncludeComponent
             }
           ]
         }
