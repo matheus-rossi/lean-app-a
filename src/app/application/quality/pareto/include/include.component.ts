@@ -57,23 +57,23 @@ export class ParetoIncludeComponent implements OnInit {
   @ViewChild(PoModalComponent, { static: true }) poModal: PoModalComponent;
 
   ngOnInit(): void {
-    this.items = this.items.sort(this.compareItems);
+    this.items.sort(this.compareItems);
     this.itemsAr = this.paretoCalculation(this.items);
     this.generateChart();
   }
 
   addOperation(): void {
 
-    if(this.description && this.quantity !== null) {
+    if (this.description && this.quantity !== null) {
       const data = this.items;
-      const index = data.map(function (d) { return d.description }).indexOf(this.description);
+      const index = data.map( d => d.description ).indexOf(this.description);
       if (index === -1) {
         const newItem = {
           description: this.description,
           quantity: this.quantity
-        }
+        };
         this.items.push(newItem);
-        this.items = this.items.sort(this.compareItems);
+        this.items.sort(this.compareItems);
         this.itemsAr = this.paretoCalculation(this.items);
       }
       this.resetItems();
@@ -83,7 +83,7 @@ export class ParetoIncludeComponent implements OnInit {
         message: 'Campos inválidos, favor verificar as informações',
         duration: 3000
       };
-  
+
       this.poNotification.warning(poNotification);
     }
   }
@@ -107,17 +107,17 @@ export class ParetoIncludeComponent implements OnInit {
 
   removeSelectedItems(selectedItems): void {
     this.items = this.items.filter(item => !selectedItems.includes(item));
-    // this.generateChart();
+    this.itemsAr = this.paretoCalculation(this.items);
   }
 
-  compareItems (a, b) {
+  compareItems(a, b): number {
     if (a.quantity > b.quantity) {
-      return -1
+      return -1;
     }
     if (a.quantity < b.quantity) {
-      return 1
+      return 1;
     }
-    return 0
+    return 0;
   }
 
   resetItems(): void {
@@ -125,33 +125,37 @@ export class ParetoIncludeComponent implements OnInit {
     this.quantity = null;
   }
 
-  paretoCalculation (paretoAr) {
-    const paretoArray = paretoAr.sort(this.compareItems)
+  paretoCalculation(paretoAr): object {
+    const paretoArray = paretoAr.sort(this.compareItems);
     const patternX = [
       ['x']
-    ]
+    ];
     const patternQtd = [
       ['Quantidade']
-    ]
+    ];
     const patternAcc = [
       ['% Acumulado']
-    ]
-    const patternXFinal = paretoArray.map(item => item.description)
-    const patternQtdFinal = paretoArray.map(item => item.quantity)
-    const totalPercent = patternQtdFinal.reduce((acc, curr) => acc + curr)
-    const itemPercent = patternQtdFinal.map(item => Math.round((item / totalPercent) * 100))
-    const patternAccAlmost = itemPercent.reduce(function (r, c, i) { r.push((r[i - 1] || 0) + c); return r }, [])
-    const finalPatternAcc = _.flattenDeep(patternAcc.concat(patternAccAlmost))
-    const finalPatternX = _.flattenDeep(patternX.concat(patternXFinal))
-    const finalPatternQtd = _.flattenDeep(patternQtd.concat(patternQtdFinal))
+    ];
+    const patternXFinal = paretoArray.map(item => item.description);
+    const patternQtdFinal = paretoArray.map(item => item.quantity);
+    const totalPercent = patternQtdFinal.reduce((acc, curr) => acc + curr, 0);
+    const itemPercent = patternQtdFinal.map(item => Math.round((item / totalPercent) * 100));
+    const patternAccAlmost = itemPercent
+      .reduce((r, c, i) => {
+        r.push((r[i - 1] || 0) + c);
+        return r;
+      }, []);
+    const finalPatternAcc = _.flattenDeep(patternAcc.concat(patternAccAlmost));
+    const finalPatternX = _.flattenDeep(patternX.concat(patternXFinal));
+    const finalPatternQtd = _.flattenDeep(patternQtd.concat(patternQtdFinal));
     return {
       finalPatternX,
       finalPatternQtd,
       finalPatternAcc
-    }
+    };
   }
 
-  generateChart() {
+  generateChart(): void {
     setTimeout(() => {
       return c3.generate({
         bindto: '#chart',
@@ -196,8 +200,8 @@ export class ParetoIncludeComponent implements OnInit {
             ]
           }
         }
-      })
-    }, 50)
+      });
+    }, 50);
   }
 
 }

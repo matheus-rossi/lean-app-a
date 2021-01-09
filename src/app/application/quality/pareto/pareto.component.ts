@@ -7,7 +7,7 @@ import { PoPageAction } from '@po-ui/ng-components';
   styleUrls: ['./pareto.component.css']
 })
 export class ParetoComponent implements OnInit {
-  
+
   public readonly actions: Array<PoPageAction> = [
     { label: 'Ajuda', url: 'https://exoconsultoria.com.br/estudo-de-caso-01-gbo/', icon: 'po-icon-help' }
   ];
