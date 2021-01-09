@@ -32,9 +32,9 @@ export class ApplicationHomeComponent implements OnInit {
         },
         {
           text: 'GPT',
-          situation: '0%',
+          situation: '5%',
           status: 'info',
-          value: 0
+          value: 5
         },
         {
           text: 'OEE / TEEP',
