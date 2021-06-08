@@ -10,8 +10,6 @@ import { PoModule } from '@po-ui/ng-components';
 import { PoTemplatesModule } from '@po-ui/ng-templates';
 import { PoPageLoginModule } from '@po-ui/ng-templates';
 
-import { NgxResizeObserverModule } from 'ngx-resize-observer';
-
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 import { AppComponent } from './app.component';
@@ -73,8 +71,7 @@ import { HelpcenterHomeComponent } from './application/helpcenter/helpcenter-hom
     PoTemplatesModule,
     PoPageLoginModule,
     FormsModule,
-    PdfViewerModule,
-    NgxResizeObserverModule
+    PdfViewerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
